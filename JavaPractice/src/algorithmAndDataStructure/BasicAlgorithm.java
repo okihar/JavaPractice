@@ -1,6 +1,15 @@
-package AlgorithmAndDataStructure;
+/**
+ * 
+ */
+package algorithmAndDataStructure;
 
-public class Q1 {
+/**
+ * 『新明解　Javaで学ぶアルゴリズムとデータ構造』
+ * 第一章　「基本的なデータ構造」　演習問題
+ * @author owner
+ *
+ */
+public class BasicAlgorithm {
 	public static void main (String[]a) {
 		triangleLB(3);
 		System.out.println("");
@@ -17,7 +26,7 @@ public class Q1 {
 	}
 	static void triangleLB(int b) {
 		for(int tate=0;tate<b;tate++) {
-			System.out.print("��");
+			System.out.print("��");
 			for(int yoko=0;yoko<tate;yoko++) {
 				System.out.print(" ");
 			}
@@ -34,9 +43,9 @@ public class Q1 {
 			System.out.print("_");
 		}
 		System.out.println("");
-		for(int i=0;i<=n-1;i++) {
+		for(int tate=0;tate<=n-1;tate++) {
 			System.out.print("|");
-			for(int space=n-2;space>=i;space--) {
+			for(int space=n-2;space>=tate;space--) {
 				System.out.print(" ");
 			}
 			System.out.println("/");
@@ -63,16 +72,16 @@ public class Q1 {
 
 		for(int i=0;i<n;i++) {
 			for(int space=n-2;space>=i;space--) {
-				System.out.print("�@");
+				System.out.print("�@");
 			}
 			System.out.print("/");
 			for(int j=1;j<=i;j++) {
-				System.out.print("�@");
+				System.out.print("�@");
 			}
 			System.out.println("|");
 		}
 		for(int k=n;k>0;k--)
-			System.out.print("�P");
+			System.out.print("�P");
 	}
 
 	static void spira(int totalRow) {
@@ -81,7 +90,7 @@ public class Q1 {
 			for(int i=0;i<=totalRow-row;i++) {
 				System.out.print(" ");
 			}
-			for(int hosi=1;hosi<=(row-1)*2+1;hosi++) {
+			for(int star=1;star<=(row-1)*2+1;star++) {
 				System.out.print("*");
 			}
 			System.out.println("");
