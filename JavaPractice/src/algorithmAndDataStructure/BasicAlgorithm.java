@@ -4,8 +4,8 @@
 package algorithmAndDataStructure;
 
 /**
- * 『新明解　Javaで学ぶアルゴリズムとデータ構造』
- * 第一章　「基本的なデータ構造」　演習問題
+ * �w�V�E�����@Java�Ŋw�ԃA���S���Y���ƃf�[�^�\���x
+ * ���͉��K���
  * @author owner
  *
  */
