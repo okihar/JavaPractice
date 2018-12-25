@@ -26,7 +26,7 @@ public class BasicAlgorithm {
 	}
 	static void triangleLB(int b) {
 		for(int tate=0;tate<b;tate++) {
-			System.out.print("��");
+			System.out.print("|");
 			for(int yoko=0;yoko<tate;yoko++) {
 				System.out.print(" ");
 			}
@@ -72,16 +72,16 @@ public class BasicAlgorithm {
 
 		for(int i=0;i<n;i++) {
 			for(int space=n-2;space>=i;space--) {
-				System.out.print("�@");
+				System.out.print("*");
 			}
 			System.out.print("/");
 			for(int j=1;j<=i;j++) {
-				System.out.print("�@");
+				System.out.print("*");
 			}
 			System.out.println("|");
 		}
 		for(int k=n;k>0;k--)
-			System.out.print("�P");
+			System.out.print("*");
 	}
 
 	static void spira(int totalRow) {
