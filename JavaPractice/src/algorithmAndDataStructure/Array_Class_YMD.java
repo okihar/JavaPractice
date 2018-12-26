@@ -29,7 +29,7 @@ public class Array_Class_YMD {
 	// 問 n日後の日付を返すメソッド作成
 	public int YMDafter(int n) {
 		if(leftDayOfYear(this.year,this.month,this.day)>n) {
-			return 
+			return null;
 		}
 		int thisMonth = mdays[isLeap(this.year)][this.month - 1];
 	}
