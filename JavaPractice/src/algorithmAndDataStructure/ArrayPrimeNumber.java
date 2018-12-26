@@ -2,7 +2,7 @@ package algorithmAndDataStructure;
 
 /**
  * 『新明解 Javaで学ぶアルゴリズムとデータ構造』 
- * 第二章 「配列-素数」
+ * 第二章 「配列-素数」 
  * 
  * @author owner
  *
