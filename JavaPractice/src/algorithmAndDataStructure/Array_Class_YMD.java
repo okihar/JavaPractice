@@ -27,11 +27,22 @@ public class Array_Class_YMD {
 	}
 
 	// 問 n日後の日付を返すメソッド作成
-	public int YMDafter(int n) {
-		if(leftDayOfYear(this.year,this.month,this.day)>n) {
-			return null;
+	public Array_Class_YMD after(int n) {
+		//月をまたがない場合
+		if((this.day+n)<mdays[isLeap(this.year)][this.month-1]) {
+			this.day+=n;
+			return this;
 		}
-		int thisMonth = mdays[isLeap(this.year)][this.month - 1];
+		//月をまたぐ場合
+		for(int i=0;0<=(n-(mdays[isLeap(this.year)][this.month-1]-this.day)-mdays[isLeap(this.year)][this.month-1+i]);i++) {
+			this.month +=1;
+			if(this.month==13) {
+				this.month=1;
+				this.year +=1;
+			}
+		}
+		this.day=(n-(mdays[isLeap(this.year)][this.month-1]-this.day));
+		return this;
 	}
 
 	// うるう年:1/平年:0を返却
