@@ -26,22 +26,28 @@ public class Array_Class_YMD {
 		this.day = day;
 	}
 
-	// 問 n日後の日付を返すメソッド作成
+	// 問11 n日後の日付を返すメソッド作成
 	public Array_Class_YMD after(int n) {
-		//月をまたがない場合
-		if((this.day+n)<mdays[isLeap(this.year)][this.month-1]) {
-			this.day+=n;
+		// 月をまたがない場合
+		if ((this.day + n) < mdays[isLeap(this.year)][this.month - 1]) {
+			this.day += n;
 			return this;
 		}
-		//月をまたぐ場合
-		for(int i=0;0<=(n-(mdays[isLeap(this.year)][this.month-1]-this.day)-mdays[isLeap(this.year)][this.month-1+i]);i++) {
-			this.month +=1;
-			if(this.month==13) {
-				this.month=1;
-				this.year +=1;
+		// 月をまたぐ場合
+		// 今月初めから見て、何日後か
+		int remainDays = n + this.day;
+
+		while (remainDays > mdays[isLeap(this.year)][this.month - 1]) {
+			remainDays -= mdays[isLeap(this.year)][this.month - 1];
+			this.month += 1;
+			if (this.month == 13) {
+				this.month = 1;
+				this.year += 1;
 			}
 		}
-		this.day=(n-(mdays[isLeap(this.year)][this.month-1]-this.day));
+		;
+
+		this.day = remainDays;
 		return this;
 	}
 
@@ -52,7 +58,8 @@ public class Array_Class_YMD {
 		}
 		return 0;
 	}
-	//今年の残り日数
+
+	// 今年の残り日数
 	int leftDayOfYear(int y, int m, int d) {
 		// m月の残り日数
 		int days = mdays[isLeap(y)][m - 1] - d;
@@ -61,5 +68,4 @@ public class Array_Class_YMD {
 		}
 		return days;
 	}
-
 }
