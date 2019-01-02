@@ -1,10 +1,11 @@
 package algorithmAndDataStructure;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.h
 
 import org.junit.Test;
 
-public class YMD_test {
+public class Array_Class_YMDTest {
 	
 	/**
 	 * after()　
@@ -110,6 +111,7 @@ public class YMD_test {
 		int actual=ymd.dateDifference();
 		//検証
 		assertEquals(9355,actual);
+		assertThat(9335,is(actual));
 	}
 	
 }

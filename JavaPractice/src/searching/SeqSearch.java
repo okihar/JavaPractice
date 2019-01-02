@@ -14,8 +14,7 @@ import java.util.Scanner;
 public class SeqSearch {
 
 	/**
-	 * 線形探索 基本例 
-	 * →2つの条件を繰り返してしまう
+	 * 線形探索 基本例 →2つの条件を繰り返してしまう
 	 * 
 	 * @param args
 	 */
@@ -34,7 +33,7 @@ public class SeqSearch {
 	}
 
 	/**
-	 * 線形探索 for文
+	 * 線形探索 for文 演習3-1
 	 * 
 	 * @param args
 	 */
@@ -49,10 +48,52 @@ public class SeqSearch {
 	}
 
 	/**
-	 * 線形探索 番兵法(sentinel) 
-	 * →探索するキー値と同じ値を末尾要素に格納 
-	 * →探索失敗することがなくなる 
-	 * →繰り返しの終了判定を1つにできる
+	 * 線形探索 走査過程を表示 
+	 * 演習3-2
+	 * 
+	 * @param args
+	 */
+	static int SeqSearchProcess(int[] a, int n, int key) {
+
+		// 表の型つくり
+		System.out.print("   |");
+		for (int i = 0; i < n; i++) {
+			System.out.printf("%4d", i);
+		}
+		System.out.println();
+		System.out.print("---+");
+		for (int i = 0; i < n; i++) {
+			System.out.print("----");
+		}
+		System.out.println("");
+
+		for (int i = 0; i < a.length; i++) {
+
+			System.out.print("   |");
+			System.out.print("   ");
+
+			for (int j = 1; j <= i; j++) {
+				System.out.print("    ");
+			}
+			System.out.println("*");
+			System.out.print("  " + i);
+			System.out.print("|");
+			for (int odr = 0; odr < n; odr++) {
+				System.out.printf("%4d", a[odr]);
+			}
+			System.out.println("");
+			if (a[i] == key) {
+				return i;
+			}
+		}
+		// 探索に失敗
+		return -1;
+	}
+
+	/**
+	 * 線形探索 番兵法(sentinel) (mainメソッドで配列を宣言する際、+1する必要) 
+	 * →探索するキー値と同じ値を末尾要素に格納
+	 * →探索失敗することがなくなる →繰り返しの終了判定を1つにできる 
 	 * →(whileではなく、for文で書いてしまうと関係ない?)
 	 * 
 	 * @param args
@@ -83,8 +124,8 @@ public class SeqSearch {
 
 		System.out.print("要素数:");
 		int num = stdIn.nextInt();
-		// 番兵を格納するため
-		int[] x = new int[num + 1];
+
+		int[] x = new int[num];
 
 		for (int i = 0; i < num; i++) {
 			System.out.println("x[" + i + "]:");
@@ -93,7 +134,7 @@ public class SeqSearch {
 
 		System.out.println("探す値:");
 		int ky = stdIn.nextInt();
-		int idx = seqSearchSen(x, ky);
+		int idx = SeqSearchProcess(x, num, ky);
 
 		if (idx == -1) {
 			System.out.println("その値は存在しません");
